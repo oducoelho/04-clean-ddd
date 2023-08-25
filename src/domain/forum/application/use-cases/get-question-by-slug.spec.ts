@@ -12,7 +12,7 @@ describe('Create Question By Slug', () => {
   })
 
   // afterEach(() => {})
-  it('should be able to get a quesyion by slug', async () => {
+  it('should be able to get a question by slug', async () => {
     const newQuestion = makeQuestion({
       slug: Slug.create('example-question'),
     })
