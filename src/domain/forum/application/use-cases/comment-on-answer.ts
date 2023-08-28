@@ -1,7 +1,7 @@
 import { AnswersRepository } from '../repositories/answers-repository'
 import { AnswerComment } from '../../enterprise/entities/answer-comment'
 import { UniqueEntityID } from '@/core/entitites/unique-entity-id'
-import { AnswerCommentsRepository } from '../repositories/asnwer-commnets-repository'
+import { AnswerCommentsRepository } from '../repositories/answer-commnets-repository'
 
 interface CommentOnAnswerUseCaseRequest {
   authorId: string
