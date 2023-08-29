@@ -6,7 +6,8 @@
   "rules": {
     "adjacent-overload-signatures": "off",
     "no-useless-constructor": "off",
-    "no-empty-interface": "off"
+    "no-empty-interface": "off",
+    "no-explicit-any": "off"
   },
   "env": {
     "vitest-globals/env": "true"
