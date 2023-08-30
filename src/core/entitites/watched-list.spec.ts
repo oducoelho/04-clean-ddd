@@ -58,7 +58,7 @@ describe('watched list', () => {
   it('should be able to update watched list items', () => {
     const list = new NumberWatchedList([1, 2, 3])
 
-    list.update([1, 2, 5])
+    list.update([1, 3, 5])
 
     expect(list.currentItems).toHaveLength(3)
 
