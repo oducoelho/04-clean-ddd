@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
-import { Entity } from '@/core/entitites/entity'
 import { UniqueEntityID } from '@/core/entitites/unique-entity-id'
 import { Optional } from '@/core/types/optional'
 import { AnswerAttachmentList } from './answer-attachment-list'
+import { AggregateRoot } from '@/core/entitites/aggregate-root'
+import { AnswerCreatedEvent } from '../events/answer-created-event'
 
 export interface AnswerProps {
   authorId: UniqueEntityID
@@ -13,7 +14,7 @@ export interface AnswerProps {
   updatedAt?: Date
 }
 
-export class Answer extends Entity<AnswerProps> {
+export class Answer extends AggregateRoot<AnswerProps> {
   get authorId() {
     return this.props.authorId
   }
@@ -68,6 +69,12 @@ export class Answer extends Entity<AnswerProps> {
       },
       id,
     )
+
+    const isNewAnswer = !id
+
+    if (isNewAnswer) {
+      answer.addDomainEvent(new AnswerCreatedEvent(answer))
+    }
 
     return answer
   }
