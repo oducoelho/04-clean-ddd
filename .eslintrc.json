@@ -6,7 +6,7 @@
   "rules": {
     "adjacent-overload-signatures": "off",
     "no-useless-constructor": "off",
-    "no-empty-interface": "off",
+    "no-new": "off",
     "no-explicit-any": "off"
   },
   "env": {
